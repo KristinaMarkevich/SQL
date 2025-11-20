@@ -1,7 +1,4 @@
 1.  Определить средний возраст пользователей для каждого города. 
-
-Таблицы:
-
 users (id, name, age, city_id)
 cities (id, name)
 
@@ -11,7 +8,6 @@ on us.city_id = cit.id
 group by cities.name;
 
 2. Вычислить общее количество продаж и общую сумму продаж для каждой категории товаров.
-
 sales (id, productid, quantity, totalprice)
 products (id, name, category_id)
 categories (id, name)
