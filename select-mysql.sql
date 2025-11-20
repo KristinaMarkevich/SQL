@@ -44,7 +44,7 @@ mysql> select * from employees where first_name in ("Jane", "Emily");
 
 12. Сложное условие с операторами AND и сравнениями.
 
-select * from employees where (salary >= 62000) and department_id in (1,2);
+mysql> select * from employees where (salary >= 62000) and department_id in (1,2);
 
 13. Сортировка результатов по возрастанию.
 
