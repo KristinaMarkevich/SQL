@@ -1,4 +1,4 @@
-1.  Определить средний возраст пользователей для каждого города. Эта задача требует использования операторов JOIN и агрегатных функций для вычисления среднего возраста.
+1.  Определить средний возраст пользователей для каждого города. 
 
 Таблицы:
 
@@ -10,7 +10,7 @@ join cities cit
 on us.city_id = cit.id
 group by cities.name;
 
-2. Вычислить общее количество продаж и общую сумму продаж для каждой категории товаров. Эта задача требует использования нескольких операторов JOIN и агрегатных функций для вычисления итоговых значений.
+2. Вычислить общее количество продаж и общую сумму продаж для каждой категории товаров.
 
 sales (id, productid, quantity, totalprice)
 products (id, name, category_id)
@@ -22,7 +22,9 @@ join products p on s.productid = p.id
 join categories c on p.category_id = c.id
 group by c.name
 
-3. Найдите клиентов чьё имя является фамилией другого клиента. Выведите таблицу с полями customer_id, first_name, last_name для первого клиента и такие же поля customer_id, first_name, last_name для второго. Отсортируйте по customer_id первого клиента.
+3. Найдите клиентов чьё имя является фамилией другого клиента. 
+ Выведите таблицу с полями customer_id, first_name, last_name для первого клиента и такие же поля customer_id, first_name, last_name для второго. 
+ Отсортируйте по customer_id первого клиента.
 
 select A.customer_id AS customer_id, A.first_name AS first_name, A.last_name AS last_name,
  B.customer_id AS customer_id, B.first_name AS first_name, B.last_name AS last_name
@@ -32,7 +34,8 @@ on A.first_name = B.last_name
 where A.first_name = B.last_name
 order by A.customer_id;
 
-4. Найдите фильмы из базы данных Sakila, для которых нет записей об учавствоваших в них актёрах используя соединение таблиц JOIN.
+4. Найдите фильмы из базы данных Sakila, для которых нет записей 
+ об учавствоваших в них актёрах используя соединение таблиц JOIN.
 Выведите результирующую с полями title, release_year отсортированных по названию фильма.
   
 select title, release_year from film
@@ -79,7 +82,8 @@ group by name
 order by avg(f.rental_rate ) desc ;  
 
 9. Найдите минимальную и максимальную и среднюю продолжительность фильма для каждой категории.
-Отобразите результат в виде таблицы с колонками: category - название категории фильмов, min_length, max_length и avg_length отсортированной по категории в алфавитном порядке
+Отобразите результат в виде таблицы с колонками: category - название категории фильмов, min_length, max_length и avg_length 
+ отсортированной по категории в алфавитном порядке
 
 select name as category, min(f.length ) as min_length, max(f.length) as max_length, avg(f.length) as avg_length
 from category c
@@ -91,7 +95,8 @@ group by name
 order by name;
 
 10. Найдите категории со средней продолжительностью фильма более двух часов.
-Отобразите результат в виде таблицы с колонками: category - название категории фильмов и avg_length отсортированной по убыванию средней длины фильма
+Отобразите результат в виде таблицы с колонками: category - название категории фильмов и avg_length 
+ отсортированной по убыванию средней длины фильма
 
 select name as category, avg(length) as avg_length from category 
 join film_category using( category_id )
@@ -101,7 +106,8 @@ having avg(length) > 120
 order by 2 desc;
 
 11. Напишите SQL запрос, чтобы найти трех крупнейших клиентов с наибольшим общим объемом платежей в базе данных Sakila.
-Отобразите в таблице результатов имя, фамилию и общую сумму платежей клиентов в first_name, last_name и total_pay соответственно. Отсортируйте результаты по total_pay в порядке убывания.
+Отобразите в таблице результатов имя, фамилию и общую сумму платежей клиентов в first_name, last_name и total_pay соответственно.
+ Отсортируйте результаты по total_pay в порядке убывания.
   
 select first_name, last_name, sum(p.amount) as total_pay from customer
 join payment p using( customer_id )
