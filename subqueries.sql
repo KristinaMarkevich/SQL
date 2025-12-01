@@ -27,6 +27,5 @@ order by rental_rate desc;
 
 select title, release_year from film
 WHERE NOT EXISTS (select * from  film_actor 
-where film_actor.film_id = film.film_id
-)
+where film_actor.film_id = film.film_id)
 order by title;
