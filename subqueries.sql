@@ -29,3 +29,12 @@ select title, release_year from film
 WHERE NOT EXISTS (select * from  film_actor 
 where film_actor.film_id = film.film_id)
 order by title;
+
+5. Какой средний возраст клиентов, купивших Smartwatch (использовать наименование товара product.name) в 2024 году?
+
+select avg(age) as average_age from Customer
+where Customer.customer_key in(
+select customer_key from Purchase
+join Product using (product_key)
+where year(Purchase.date) = 2024 and Product.name =
+'Smartwatch');
