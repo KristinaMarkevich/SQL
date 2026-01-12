@@ -3,7 +3,7 @@ Here you find completed exercises
 
 in EN
 
-<a href="https://github.com/KristinaMarkevich/SQL/blob/main/sql_academy_exercises.sql">SQL academy exercises</a> 
+<a href="https://github.com/KristinaMarkevich/SQL/blob/main/sql-academy-exercises.sql">SQL academy exercises</a> 
 
 in RU
 
