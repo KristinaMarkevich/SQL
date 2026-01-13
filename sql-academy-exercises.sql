@@ -77,3 +77,11 @@ sum(population) as total_population
 from Regions
 join Cities on Regions.id = Cities.regionid
 GROUP by Regions.name;
+
+8. Display the identifiers of all the owners of the rooms that are placed on our service for choosing accommodation and the value they have earned.
+
+select owner_id as owner_id,
+ifnull(sum(total), 0) as total_earn
+from Rooms
+left join Reservations on Rooms.id = Reservations.room_id
+group by owner_id;
